@@ -1,6 +1,11 @@
 from fastapi import FastAPI
 from google_play_scraper import app
 
+import pandas as pd
+# Librerias Necesarias para trabajo y cadenas de texto
+import re
+import string
+
 #Funciones Operativas
 
 def extraccion():
@@ -15,6 +20,10 @@ def dictionario():
     receptor=extraccion()
     comentarios_dict=dict(enumerate(set(receptor)))
     return comentarios_dict 
+
+def NLP():
+    perri2=[1,2]
+    return  perri2
 
 perri=[1,2]
 
@@ -35,3 +44,11 @@ def visualize_Ncomments(n):
     receptor=extraccion()
     comentarios_dict=dict(enumerate(set(receptor[0:number])))  
     return comentarios_dict
+
+@appli.get('/calification')
+def calification():
+    return perri
+
+@appli.post('/calification')
+def calification(n):
+    return perri
